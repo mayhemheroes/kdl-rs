@@ -1,0 +1,9 @@
+project: kdl-rs
+target: kdl-rs-parse
+duration: 300
+
+cmds:
+  - cmd: /fuzz
+    env:
+      DISABLE_SMOKETEST: '1'
+    afl: true
