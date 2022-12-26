@@ -7,4 +7,5 @@ edition = "2021"
 
 [dependencies]
 afl = "*"
+arbitrary = { version = "1.2.0" }
 kdl = { path = ".." }
