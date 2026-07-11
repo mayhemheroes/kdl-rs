@@ -1,0 +1,10 @@
+project: kdl-rs
+target: kdl-rs-parse
+duration: 300
+
+cmds:
+  - cmd: /mayhem/kdl-rs-parse
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/kdl-rs-parse/testsuite

@@ -1,0 +1,25 @@
+# Additive cargo-fuzz crate for the Mayhem integration. Lives under mayhem/ so it
+# leaves the upstream tree untouched. `[workspace]` (empty) detaches it from the
+# parent kdl workspace (which has members = ["tools/*"]) so `cargo fuzz build`
+# only compiles this crate + the kdl crate, not tools/kdl-lsp.
+[package]
+name = "kdl-rs-fuzz"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+kdl = { path = "../.." }
+
+[[bin]]
+name = "main"
+path = "fuzz_targets/main.rs"
+test = false
+doc = false
+bench = false
+
+[workspace]
